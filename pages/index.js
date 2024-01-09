@@ -1,131 +1,127 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+// pages/index.js
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import { useState } from "react";
+
+const content = [
+  [
+    "React is extremely popular",
+    "It makes building complex, interactive UIs a breeze",
+    "It's powerful & flexible",
+    "It has a very active and versatile ecosystem",
+  ],
+  [
+    "Components, JSX & Props",
+    "State",
+    "Hooks (e.g., useEffect())",
+    "Dynamic rendering",
+  ],
+  [
+    "Official web page (react.dev)",
+    "Next.js (Fullstack framework)",
+    "React Native (build native mobile apps with React)",
+  ],
+  [
+    "React is extremely popular",
+    "It makes building complex, interactive UIs a breeze",
+    "It's powerful & flexible",
+    "It has a very active and versatile ecosystem",
+  ],
+  [
+    "Components, JSX & Props",
+    "State",
+    "Hooks (e.g., useEffect())",
+    "Dynamic rendering",
+  ],
+  [
+    "Official web page (react.dev)",
+    "Next.js (Fullstack framework)",
+    "React Native (build native mobile apps with React)",
+  ],
+];
 
 export default function Home() {
+  const [activeContentIndex, setActiveContentIndex] = useState(0);
+
   return (
-    <div className={styles.container}>
+    <div className={styles.background}>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>EEs</title>
       </Head>
-
-      <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <div className={styles.container}>
+        <div className={styles.flexContainer}>
+          <div className={styles.DivLeft}>
+            <p className={styles.Text}>Buttons</p>
+          </div>
+          <div className={styles.DivRight}>
+            <div className={styles.tabs}>
+              <menu className={styles.tabsMenu}>
+                <button
+                  className={`${styles.tabsButton} ${
+                    activeContentIndex === 0 ? styles.active : ""
+                  }`}
+                  onClick={() => setActiveContentIndex(0)}>
+                  FLYER
+                </button>
+                <button
+                  className={`${styles.tabsButton} ${
+                    activeContentIndex === 1 ? styles.active : ""
+                  }`}
+                  onClick={() => setActiveContentIndex(1)}>
+                  MENU
+                </button>
+                <button
+                  className={`${styles.tabsButton} ${
+                    activeContentIndex === 2 ? styles.active : ""
+                  }`}
+                  onClick={() => setActiveContentIndex(2)}>
+                  WERNUNG
+                </button>
+                <button
+                  className={`${styles.tabsButton} ${
+                    activeContentIndex === 3 ? styles.active : ""
+                  }`}
+                  onClick={() => setActiveContentIndex(3)}>
+                  ZEITUNG
+                </button>
+                <button
+                  className={`${styles.tabsButton} ${
+                    activeContentIndex === 4 ? styles.active : ""
+                  }`}
+                  onClick={() => setActiveContentIndex(4)}>
+                  ZEITSCHRIFTEN
+                </button>
+                <button
+                  className={`${styles.tabsButton} ${
+                    activeContentIndex === 5 ? styles.active : ""
+                  }`}
+                  onClick={() => setActiveContentIndex(5)}>
+                  KARTEN
+                </button>
+              </menu>
+              <div className={styles.tabContent}>
+                <ul>
+                  {content[activeContentIndex].map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
+      </div>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
+      <footer className={styles.footer}>
+        <p>
+          <h3>DRUCKEREI & VERTEILUNG</h3>
+        </p>
+        <img src="phone.png" width={30} className={styles.Phone} alt="Nr tel" />
+        <p className={styles.PhoneNr}>+41787104195</p>
+        <p className={styles.PhoneNr2}>+41764554912</p>
+
+        <img src="email.png" width={30} className={styles.Email} />
+        <p className={styles.Email1}>ee-druck.ch@hotmail.com</p>
       </footer>
-
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family:
-            Menlo,
-            Monaco,
-            Lucida Console,
-            Liberation Mono,
-            DejaVu Sans Mono,
-            Bitstream Vera Sans Mono,
-            Courier New,
-            monospace;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family:
-            -apple-system,
-            BlinkMacSystemFont,
-            Segoe UI,
-            Roboto,
-            Oxygen,
-            Ubuntu,
-            Cantarell,
-            Fira Sans,
-            Droid Sans,
-            Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
     </div>
   );
 }
