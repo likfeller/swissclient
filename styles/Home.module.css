@@ -1,35 +1,32 @@
-.background {
-    background-image: url("/ori.jpg");
-    background-size: 70%;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 120vh;
-    position: relative;
+.body {
+    overflow: hidden;
+    
 }
-.DivLeft {
-    height: 50px;
-    width: 10%;
-    background-color: rgb(24, 29, 27);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin-left: 10px;
-    margin-top: 10px;
-    color: antiquewhite;
-    text-align: center;
+.background {
+    background-image: url("/EE22.png");
+    background-size: 25%;
+    background-repeat: no-repeat;
+    height: 97vh;
+    width: 99%;
+    position: absolute;
+background-color: #ededed;
+
+}
+.swissBig {
+  margin-left: 25%;
 }
 .DivRight {
-    height: 30%;
-    width: 60%;
+    height: 33%;
+    width: 50%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     margin-right: 10px;
     margin-top: 10px;
-    margin-left: 39%;
+    margin-left: 70%;
     display: flex;
+    color: #ffffff;
 }
 
 .flexContainer {
@@ -38,6 +35,17 @@
 }
 .Htxt {
     color: antiquewhite;
+}
+
+.swiss {
+    margin-left: 45.5%;
+    margin-top: 9.6%;
+    position: absolute;
+}
+.swiss2 {
+    margin-left: 56.5%;
+    margin-top: 9.6%;
+    position: absolute;
 }
 
 .footer {
@@ -58,72 +66,78 @@
   margin-left: 4px;
 }
 .Phone {
-margin-left: 40%;
+margin-left: 35%;
 position: absolute;
+margin-top: 9.5%;
 }
 .PhoneNr {
-margin-left: 43%;
+margin-left: 38%;
 position: absolute;
+margin-top: 11%;
 }
 
+
 .PhoneNr2 {
-margin-left: 52%;
+margin-left: 49%;
 position: absolute;
+margin-top: 11%;
 }
 
 .Email {
 position: absolute;
 margin-left: 80%;
+margin-top: 9.5%;
 }
                                                                                       
 .Email1 {
 margin-left: 83%;
 position: absolute;
-}
-.Numbers {
-height: 50px;
-width: 10%;
-background-color: rgb(24, 29, 27);
-border-top-left-radius: 20px;
-border-top-right-radius: 20px;
-border-bottom-left-radius: 20px;
-border-bottom-right-radius: 20px;
-background-color: olive;
-align-items: center;
-text-align: center;
+margin-top: 11%;
 }
 .tabs {
-    max-width: 52rem;
-    overflow: hidden;
+    max-width: 50rem;
+    
+        position:absolute;
+        top: 0;
+        left: 0;
+        margin-left: 55.5%;
+        width: 585;
+      
   }
   .tabsMenu {
     margin: 0;
     padding: 0;
     display: flex;
     gap: 0.25rem;
-    width: 623px;
+    width: 595;
+    margin-left: 2.5%;
   }
   .tabsButton {
     font: inherit;
     font-size: 0.85rem;
-    background-color: #676767;
+    background-color: #ff0606;
     border: none;
-    border-bottom-color: #48d9f3;
-    color: #e0eff1;
+    /* color: #e0eff1; */
+    color: #ffffff;
+    
     border-radius: 4px 4px 0 0;
     padding: 0.75rem 1rem;
     cursor: pointer;
-    transition: all 0.2s ease-out;
+    width: 92%;
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
   }
   .tabsButton:hover,
   .tabsButton.active {
-    background-color: #17144d;
-    color: #676767;
+    background-color: #ffffff;
+    color: #ff0606;
+    
   }
   .tabContent {
-    background-color: #17144d;
+    background-color: #ff0606;
+    width: 94.3%;
     border-radius: 0 4px 4px 4px;
     padding: 1rem;
+    margin-left: 2.6%;
   }
   
   
