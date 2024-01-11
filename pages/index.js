@@ -8,55 +8,21 @@ import Zeitung from "./components/Zeitung";
 import Karten from "./components/Karten";
 import Zeitschriften from "./components/Zeitschriften";
 
-const content = [
-  [
-    "React is extremely popular",
-    "It makes building complex, interactive UIs a breeze",
-    "It's powerful & flexible",
-    "It has a very active and versatile ecosystem",
-    "1",
-    "try",
-  ],
-
-  [
-    "Components, JSX & Props",
-    "State",
-    "Hooks (e.g., useEffect())",
-    "Dynamic rendering",
-  ],
-  [
-    "Something else to be added",
-    "Next.js (Fullstack framework)",
-    "React Native (build native mobile apps with React)",
-  ],
-  [
-    "ALSO THERE",
-    "It makes building complex, interactive UIs a breeze",
-    "It's powerful & flexible",
-    "It has a very active and versatile ecosystem",
-  ],
-  ["mmm here too", "State", "Hooks (e.g., useEffect())", "Dynamic rendering"],
-  [
-    "fuck you",
-    "Next.js (Fullstack framework)",
-    "React Native (build native mobile apps with React)",
-  ],
+export const z_props = [
+  {
+    text: "Something nice",
+    image: <img src="swiss.webp.jpg" alt="Swiss Image" width={100} />,
+  },
 ];
+export default function Home({ z_props }) {
+  const [showZeitung, setShowZeitung] = useState(false);
+  const handleZeitungButtonClick = () => {
+    setShowZeitung(!showZeitung);
+  };
 
-export default function Home() {
-  const [activeContentIndex, setActiveContentIndex] = useState(0);
-
-  const tabs = [
-    { component: <Flyer content={content[0]} />, label: "FLYER" },
-    { component: <Menu content={content[1]} />, label: "MENU" },
-    { component: <Werbung content={content[2]} />, label: "WERBUNG" },
-    { component: <Zeitung content={content[3]} />, label: "ZEITUNG" },
-    {
-      component: <Zeitschriften content={content[4]} />,
-      label: "ZEITSCHRIFTEN",
-    },
-    { component: <Karten content={content[5]} />, label: "KARTEN" },
-  ];
+  const handleOthers = () => {
+    setShowZeitung(false);
+  };
 
   return (
     <div className={styles.background}>
@@ -70,35 +36,35 @@ export default function Home() {
           <div className={styles.DivRight}>
             <div className={styles.tabs}>
               <menu className={styles.tabsMenu}>
-                <button
+                {/* <button
                   className={`${styles.tabsButton} ${
                     activeContentIndex === 0 ? styles.active : ""
                   }`}
                   onClick={() => setActiveContentIndex(0)}>
                   FLYER
-                </button>
-                <button
+                </button> */}
+                {/* <button
                   className={`${styles.tabsButton} ${
                     activeContentIndex === 1 ? styles.active : ""
                   }`}
                   onClick={() => setActiveContentIndex(1)}>
                   MENU
-                </button>
-                <button
+                </button> */}
+                {/* <button
                   className={`${styles.tabsButton} ${
                     activeContentIndex === 2 ? styles.active : ""
                   }`}
                   onClick={() => setActiveContentIndex(2)}>
                   WERBUNG
-                </button>
+                </button> */}
                 <button
                   className={`${styles.tabsButton} ${
-                    activeContentIndex === 3 ? styles.active : ""
+                    showZeitung ? styles.active : ""
                   }`}
-                  onClick={() => setActiveContentIndex(3)}>
+                  onClick={handleZeitungButtonClick}>
                   ZEITUNG
                 </button>
-                <button
+                {/* <button
                   className={`${styles.tabsButton} ${
                     activeContentIndex === 4 ? styles.active : ""
                   }`}
@@ -111,14 +77,10 @@ export default function Home() {
                   }`}
                   onClick={() => setActiveContentIndex(5)}>
                   KARTEN
-                </button>
+                </button> */}
               </menu>
               <div className={styles.tabContent}>
-                <ul>
-                  {content[activeContentIndex].map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
+                {showZeitung && <Zeitung z_props={z_props} />}
               </div>
             </div>
           </div>
